@@ -1,36 +1,19 @@
 import React, { Component } from 'react';
+import { Switch, Route } from 'react-router-dom';
+
 import './App.css';
-import { VictoryChart, VictoryBar, VictoryAxis, VictoryTheme } from 'victory';
 
 import Navbar from './Navbar/Navbar';
-
-const data = [
-  {quarter: 1, earnings: 13000},
-  {quarter: 2, earnings: 16500},
-  {quarter: 3, earnings: 14250},
-  {quarter: 4, earnings: 19000}
-];
+import Dashboard from './Dashboard/Dashboard';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="App__Dashboard">
         <Navbar />
-        <VictoryChart domainPadding={20} theme={ VictoryTheme.material }>
-          <VictoryAxis
-            tickValues={[1, 2, 3, 4]}
-            tickFormat={["Quarter 1", "Quarter 2", "Quarter 3", "Quarter 4"]}
-          />
-          <VictoryAxis
-            dependentAxis
-            tickFormat={(x) => (`$${x / 1000}k`)}
-          />
-          <VictoryBar
-            data={data}
-            x="quarter"
-            y="earnings"
-          />
-        </VictoryChart>
+        <Switch>
+          <Route path="/app" component={ Dashboard } />
+        </Switch>
       </div>
     );
   }
