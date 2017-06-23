@@ -34,6 +34,7 @@ class App extends Component {
                 </div>
               )
             }
+          return <div>"Loading..."</div>
         }}
       />
     );

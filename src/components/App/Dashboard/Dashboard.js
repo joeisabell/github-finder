@@ -6,15 +6,14 @@ import './Dashboard.css';
 import BarChart from './../charts/BarChart/BarChart';
 import LineChart from './../charts/LineChart/LineChart';
 
-const data = [
-  {quarter: 1, earnings: 13000},
-  {quarter: 2, earnings: 16500},
-  {quarter: 3, earnings: 14250},
-  {quarter: 4, earnings: 19000}
-];
-
 class Dashboard extends Component {
   render() {
+    const data = this.props.viewer.allSaleses.edges.map(edge => {
+      return {
+        earnings: edge.node.amount,
+        quarter: edge.node.quarter
+      }
+    })
     return (
       <div className="Dashboard__container">
         <BarChart data={ data } />
@@ -24,15 +23,18 @@ class Dashboard extends Component {
   }
 }
 
-export default createFragmentContainer(Dashboard, graphql`
-  fragment Dashboard_viewer on Viewer {
-    allQuarters {
-      edges {
-        node {
-          name
-          earnings
+export default createFragmentContainer(
+  Dashboard,
+  graphql`
+    fragment Dashboard_viewer on Viewer {
+      allSaleses {
+        edges {
+          node {
+            amount
+            quarter
+          }
         }
       }
     }
-  }
-  `)
+  `,
+)
