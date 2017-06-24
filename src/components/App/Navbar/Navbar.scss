@@ -1,12 +1,29 @@
 .Navbar__container {
   height: 60px;
-  background-color: #242AC7;
+  background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
 }
 
+a {
+  text-decoration: none;
+}
+
 .Navbar__title {
-  color: #fff;
+  color: White;
+  margin-left: 20px;
+  font-family: 'Open Sans';
+}
+
+.Navbar__appIcon {
+  cursor: pointer;
+  position: relative;
+  svg {
+    fill:#a9a9a9;
+  }
+  svg:hover {
+    fill:gray;
+  }
 }

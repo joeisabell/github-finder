@@ -7,7 +7,7 @@ class LineChart extends Component {
   render() {
     const{ data } = this.props;
     return (
-      <div className="BarChart__container">
+      <div className="LineChart__container">
         <VictoryChart
           domainPadding={20}
           theme={ VictoryTheme.material }

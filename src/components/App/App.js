@@ -7,6 +7,7 @@ import './App.css';
 
 import Navbar from './Navbar/Navbar';
 import Dashboard from './Dashboard/Dashboard';
+import Loading from './Loading/Loading';
 
 
 const AppAllDataQuery = graphql`
@@ -20,23 +21,21 @@ const AppAllDataQuery = graphql`
 class App extends Component {
   render() {
     return (
-      <QueryRenderer
-        environment={ environment }
-        query={ AppAllDataQuery }
-        render={ ({ error, props }) => {
-            if(error) {
-              return <div>error.message</div>
-            } else if (props) {
-              return (
-                <div className="App__Dashboard">
-                  <Navbar />
-                  <Dashboard viewer={ props.viewer } />
-                </div>
-              )
-            }
-          return <div>"Loading..."</div>
-        }}
-      />
+      <div>
+      <Navbar />
+        <QueryRenderer
+          environment={ environment }
+          query={ AppAllDataQuery }
+          render={ ({ error, props }) => {
+              if(error) {
+                return <div>error.message</div>
+              } else if (props) {
+                return <Dashboard viewer={ props.viewer } />
+              }
+            return <Loading />
+          }}
+        />
+      </div>
     );
   }
 }

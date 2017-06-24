@@ -16,8 +16,15 @@ class Dashboard extends Component {
     })
     return (
       <div className="Dashboard__container">
-        <BarChart data={ data } />
-        <LineChart data={ data } />
+        <h1>View All Graphs</h1>
+        <div  className="Dashboard__chartsContainer">
+          <BarChart data={ data } />
+          <LineChart data={ data } />
+          <LineChart data={ data } />
+          <BarChart data={ data } />
+          <LineChart data={ data } />
+          <LineChart data={ data } />
+        </div>
       </div>
     )
   }

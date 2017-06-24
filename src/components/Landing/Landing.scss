@@ -1,16 +1,9 @@
 .Landing__container {
   background-color: rgba(0, 0, 0, 0.7);
   height: 100vh;
-}
-
-.Landing__header {
-  text-align: center;
-  section {
-    text-align: center;
-    h1 {
-
-    }
-  }
+  color: white;
+  font-family: OpenSans;
+  font-weight: 300;
 }
 
 .Landing__nav {
@@ -39,7 +32,7 @@
   cursor: pointer;
   font-size: 24px;
   color: white;
-  font-family: monospace;
+  font-family: OpenSans;
   border-bottom-style: solid;
   border-color: transparent;
   border-radius: 2px;
@@ -49,4 +42,25 @@
 
 .Nav__options:hover {
   border-color: white;
+}
+
+.Landing__CTA {
+  text-align: center;
+  margin: 0 30px;
+
+  button {
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: white;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: orange;
+  }
+
 }

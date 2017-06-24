@@ -19,11 +19,11 @@ class Landing extends Component {
               <Link className="Nav__options" to='/app'>Demo</Link>
             </span>
           </nav>
-          <section>
-            <h1>Where does this go?</h1>
+          <section className="Landing__CTA">
+            <h1>Save the data that is important to you...</h1>
+            <Link to="/app"><button> try it </button></Link>
           </section>
         </header>
-
       </main>
     )
   }
