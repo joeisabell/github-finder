@@ -55,7 +55,7 @@ class Search extends Component {
             onChange={ this.handleChange }
           />
         </div>
-    
+
         <QueryRenderer
           environment={ environment }
           query={ SearchAllDataQuery }

@@ -1,6 +1,6 @@
 const { Environment, Network, RecordSource, Store } = require('relay-runtime')
 
-const text = 'bc2db98e8c11e02cfe95c3ed1b4e8c0d2e8fcb13'
+const text = 'a2fb3783e060dfe5790516a6e71f98d6bb1422ae'
 
 const store = new Store(new RecordSource())
 

@@ -10,7 +10,7 @@ class Results extends Component {
       <div className="Results__container">
           {
             this.props.search.edges.map((edge, i) => {
-              return <Result user = { edge.node } index={ i } />
+              return <Result user = { edge.node } key={ i } />
             })
           }
       </div>

@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import './UserProfile.css';
 
 const UserProfile = props => {
-    const{ id, name, login, avatarUrl, location, url, organizations, repositories } = props.user;
+    const{ name, login, avatarUrl, location, url, repositories } = props.user;
     return (
         <div className="Profile_UserProfile__container">
           <span>
-            <img src={ avatarUrl } alt="Profile Picture" />
+            <img src={ avatarUrl } alt="Profile" />
           </span>
           <div className="UserProfile__userInfo">
             <h2>{ name }</h2>
