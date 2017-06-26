@@ -1,0 +1,28 @@
+.Profile_UserProfile__container {
+  margin: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+
+  span img {
+    max-width: 200px;
+    padding: 5px;
+    border-style: solid;
+    border-width: thin;
+    border-radius: 4px;
+  }
+
+}
+
+.UserProfile__userInfo {
+  text-align: center;
+
+  a {
+    border-style: solid;
+    border-width: thin;
+    padding: 7px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+  }
+}

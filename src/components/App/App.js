@@ -1,42 +1,21 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
-import { QueryRenderer, graphql } from 'react-relay';
-import environment from './../../Environment';
-
-import './App.css';
+import { Route, Switch } from 'react-router-dom';
 
 import Navbar from './Navbar/Navbar';
-import Dashboard from './Dashboard/Dashboard';
-import Loading from './Loading/Loading';
-
-
-const AppAllDataQuery = graphql`
-  query AppAllDataQuery {
-    viewer {
-      ...Dashboard_viewer
-    }
-  }
-`
+import Search from './Search/Search';
+import Profile from './Profile/Profile';
 
 class App extends Component {
   render() {
     return (
       <div>
-      <Navbar />
-        <QueryRenderer
-          environment={ environment }
-          query={ AppAllDataQuery }
-          render={ ({ error, props }) => {
-              if(error) {
-                return <div>error.message</div>
-              } else if (props) {
-                return <Dashboard viewer={ props.viewer } />
-              }
-            return <Loading />
-          }}
-        />
+        <Navbar />
+        <Switch>
+          <Route exact path="/app" component={ Search } />
+          <Route exact path="/app/:login" component={ Profile } />
+        </Switch>
       </div>
-    );
+    )
   }
 }
 

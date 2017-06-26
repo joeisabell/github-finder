@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 
 import { Link } from 'react-router-dom';
 
-import logo from './../../assets/logo.png';
+import graphql from './../../assets/graphql.svg';
+import github_logo from './../../assets/github_logo.png';
+import relay from './../../assets/relay.svg';
+import react from './../../assets/react.svg';
 
 import './Landing.css';
 
@@ -12,15 +15,13 @@ class Landing extends Component {
       <main className="Landing__container">
         <header className="Landing__header">
           <nav className="Landing__nav">
-            <img className="Landing__nav_logo" src={ logo } alt=" BMI Logo" />
-            <span className="Landing__nav_options">
-              <Link className="Nav__options" to='/'>About</Link>
-              <Link className="Nav__options" to='/'>Methods</Link>
-              <Link className="Nav__options" to='/app'>Demo</Link>
-            </span>
+            <img className="Landing__nav_logo" src={ github_logo } alt=" BMI Logo" />
+            <img className="Landing__nav_logo" src={ graphql } alt=" BMI Logo" />
+            <img className="Landing__nav_logo" src={ relay } alt=" BMI Logo" />
+            <img className="Landing__nav_logo" src={ react } alt=" BMI Logo" />
           </nav>
           <section className="Landing__CTA">
-            <h1>Save the data that is important to you...</h1>
+            <h1>Find People on GitHub </h1>
             <Link to="/app"><button> try it </button></Link>
           </section>
         </header>
