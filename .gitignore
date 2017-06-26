@@ -8,6 +8,7 @@
 
 # production
 /build
+keys.js
 src/**/*.css
 
 # misc

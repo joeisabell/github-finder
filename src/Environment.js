@@ -1,6 +1,6 @@
-const { Environment, Network, RecordSource, Store } = require('relay-runtime')
+import GitHubAccessToken from './keys';
 
-const text = 'a2fb3783e060dfe5790516a6e71f98d6bb1422ae'
+const { Environment, Network, RecordSource, Store } = require('relay-runtime')
 
 const store = new Store(new RecordSource())
 
@@ -10,7 +10,7 @@ const network = Network.create((operation, variables) => {
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
-      'Authorization': `bearer ${text}`
+      'Authorization': `bearer ${GitHubAccessToken}`
     },
     body: JSON.stringify({
       query: operation.text,
